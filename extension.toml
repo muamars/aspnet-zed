@@ -1,0 +1,12 @@
+id = "aspnet"
+name = "ASP.NET"
+description = "Syntax highlighting for ASP.NET Razor Pages and Blazor (.cshtml, .razor) with @* *@ block comments"
+version = "0.0.1"
+schema_version = 1
+authors = ["Muammar <official.muammar@gmail.com>"]
+repository = "https://github.com/muamars/aspnet-zed"
+languages = ["languages/aspnet"]
+
+[grammars.razor]
+repository = "https://github.com/tris203/tree-sitter-razor"
+rev = "900f53d"
