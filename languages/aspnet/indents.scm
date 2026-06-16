@@ -1,21 +1,11 @@
 ; Auto-indentation rules for ASP.NET Razor files
 
-; C# code blocks
-(code_block
-  "}" @end) @indent
-
 ; HTML elements
-(html_element
-  (html_end_tag) @end) @indent
+(element
+  ">" @end) @indent
 
-; Self-closing HTML elements (no indent body)
-(html_self_closing_element) @indent
-
-; Razor directive code blocks
-(directive_code
-  "}" @end) @indent
-
-(directive_functions
+; @code / @functions blocks
+(razor_block
   "}" @end) @indent
 
 ; Control structures
@@ -31,7 +21,7 @@
 (razor_while
   "}" @end) @indent
 
-(razor_do
+(razor_do_while
   "}" @end) @indent
 
 (razor_switch
@@ -40,12 +30,12 @@
 (razor_try
   "}" @end) @indent
 
-(razor_using
+(razor_compound_using
   "}" @end) @indent
 
 (razor_lock
   "}" @end) @indent
 
-; Razor section
+; @section
 (razor_section
   "}" @end) @indent

@@ -1,23 +1,4 @@
 ; ==================== C# INJECTION ====================
-; Inject C# syntax highlighting into Razor code blocks
-
-((csharp_code) @injection.content
-  (#set! injection.language "csharp"))
-
-; ==================== CSS INJECTION ====================
-; Inject CSS into <style> tags
-((html_element
-  (html_start_tag
-    (tag_name) @_tag_name)
-  (#eq? @_tag_name "style"))
-  @injection.content
-  (#set! injection.language "css"))
-
-; ==================== JAVASCRIPT INJECTION ====================
-; Inject JavaScript into <script> tags
-((html_element
-  (html_start_tag
-    (tag_name) @_tag_name)
-  (#eq? @_tag_name "script"))
-  @injection.content
-  (#set! injection.language "javascript"))
+; Not needed — the Razor grammar extends C# directly via grammar.js,
+; so C# nodes (statement, expression, declaration, etc.) are already
+; parsed natively and highlighted via ";inherits: c_sharp" in highlights.scm.
